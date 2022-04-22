@@ -1,0 +1,22 @@
+[Unit]
+Description=Ghost blog
+After=network.target
+
+[Service]
+Type=simple
+PIDFile=/run/ghost/pid
+WorkingDirectory=/var/www/ghost
+RuntimeDirectory=ghost
+User=ghost
+Group=ghost
+ExecStart=/usr/bin/npm start --production /var/www/ghost
+ExecStop=/usr/bin/npm stop /var/www/ghost
+Restart=always
+SyslogIdentifier=ghost
+Environment=NODE_ENV=production
+StandardOutput=syslog
+StandardError=syslog
+PrivateTmp=true
+
+[Install]
+WantedBy=multi-user.target
