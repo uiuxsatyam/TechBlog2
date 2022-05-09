@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <title>Automate WhatsApp Messages with Python in 3 Steps</title>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <style>
+        :root {
+            --button-bg-color: #ffffff;
+            --button-text-color: var(--color-darkgrey);
+        }
+    </style>
+
+    <link rel="stylesheet" type="text/css" href="../assets/built/screen.css%3Fv=d04b565063.css" />
+
+    <link rel="canonical" href="index.html" />
+    <meta name="referrer" content="no-referrer-when-downgrade" />
+    
+    <meta property="og:site_name" content="TechRead" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Automate WhatsApp Messages with Python in 3 Steps" />
+    <meta property="og:description" content="Send WhatsApp messages to contacts and groups using PythonOne of the coolest things you can do in Python is automating everyday tasks. Probably the most common task we do every day is sending messages on WhatsApp. Although this task is as simple as picking up the phone, typing, and tapping" />
+    <meta property="og:url" content="http://localhost:2368/automate-whatsapp-messages-with-python-in-3-steps/" />
+    <meta property="og:image" content="http://localhost:2368/content/images/2022/04/0_bsS0xbIcmVU7xSC4-1.jpeg" />
+    <meta property="article:published_time" content="2022-04-22T12:37:43.000Z" />
+    <meta property="article:modified_time" content="2022-04-22T12:39:02.000Z" />
+    <meta property="article:publisher" content="https://www.facebook.com/ghost" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Automate WhatsApp Messages with Python in 3 Steps" />
+    <meta name="twitter:description" content="Send WhatsApp messages to contacts and groups using PythonOne of the coolest things you can do in Python is automating everyday tasks. Probably the most common task we do every day is sending messages on WhatsApp. Although this task is as simple as picking up the phone, typing, and tapping" />
+    <meta name="twitter:url" content="http://localhost:2368/automate-whatsapp-messages-with-python-in-3-steps/" />
+    <meta name="twitter:image" content="http://localhost:2368/content/images/2022/04/0_bsS0xbIcmVU7xSC4-1.jpeg" />
+    <meta name="twitter:label1" content="Written by" />
+    <meta name="twitter:data1" content="Satyam Anand" />
+    <meta name="twitter:site" content="@ghost" />
+    <meta property="og:image:width" content="700" />
+    <meta property="og:image:height" content="700" />
+    
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name": "TechRead",
+        "url": "http://localhost:2368/",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "http://localhost:2368/favicon.ico",
+            "width": 48,
+            "height": 48
+        }
+    },
+    "author": {
+        "@type": "Person",
+        "name": "Satyam Anand",
+        "url": "http://localhost:2368/author/satyam/",
+        "sameAs": []
+    },
+    "headline": "Automate WhatsApp Messages with Python in 3 Steps",
+    "url": "http://localhost:2368/automate-whatsapp-messages-with-python-in-3-steps/",
+    "datePublished": "2022-04-22T12:37:43.000Z",
+    "dateModified": "2022-04-22T12:39:02.000Z",
+    "image": {
+        "@type": "ImageObject",
+        "url": "http://localhost:2368/content/images/2022/04/0_bsS0xbIcmVU7xSC4-1.jpeg",
+        "width": 700,
+        "height": 700
+    },
+    "description": "Send WhatsApp messages to contacts and groups using Python\nOne of the coolest things you can do in Python is automating everyday tasks.\nProbably the most common task we do every day is sending messages on WhatsApp.\n\nAlthough this task is as simple as picking up the phone, typing, and tapping on\nthe “send” button, we could sometimes forget to send a message on special\noccasions (birthdays, anniversaries, etc).\n\nCan we schedule a WhatsApp message with Python?\n\nSure! We only need to install a libra",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://localhost:2368/"
+    }
+}
+    </script>
+
+    <meta name="generator" content="Ghost 4.44" />
+    <link rel="alternate" type="application/rss+xml" title="TechRead" href="../rss/index.html" />
+    <script defer src="https://unpkg.com/@tryghost/portal@~1.20.0/umd/portal.min.js" data-ghost="http://localhost:2368/" crossorigin="anonymous"></script><style id="gh-members-styles">.gh-post-upgrade-cta-content,
+.gh-post-upgrade-cta {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    text-align: center;
+    width: 100%;
+    color: #ffffff;
+    font-size: 16px;
+}
+
+.gh-post-upgrade-cta-content {
+    border-radius: 8px;
+    padding: 40px 4vw;
+}
+
+.gh-post-upgrade-cta h2 {
+    color: #ffffff;
+    font-size: 28px;
+    letter-spacing: -0.2px;
+    margin: 0;
+    padding: 0;
+}
+
+.gh-post-upgrade-cta p {
+    margin: 20px 0 0;
+    padding: 0;
+}
+
+.gh-post-upgrade-cta small {
+    font-size: 16px;
+    letter-spacing: -0.2px;
+}
+
+.gh-post-upgrade-cta a {
+    color: #ffffff;
+    cursor: pointer;
+    font-weight: 500;
+    box-shadow: none;
+    text-decoration: underline;
+}
+
+.gh-post-upgrade-cta a:hover {
+    color: #ffffff;
+    opacity: 0.8;
+    box-shadow: none;
+    text-decoration: underline;
+}
+
+.gh-post-upgrade-cta a.gh-btn {
+    display: block;
+    background: #ffffff;
+    text-decoration: none;
+    margin: 28px 0 0;
+    padding: 8px 18px;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.gh-post-upgrade-cta a.gh-btn:hover {
+    opacity: 0.92;
+}</style>
+    <script defer src="../public/cards.min.js%3Fv=d04b565063"></script><style>:root {--ghost-accent-color: #FF1A75;}</style>
+    <link rel="stylesheet" type="text/css" href="../public/cards.min.css%3Fv=d04b565063.css">
+
+</head>
+<body class="post-template">
+<div class="viewport">
+
+    <header id="gh-head" class="gh-head has-cover">
+        <nav class="gh-head-inner inner gh-container">
+
+            <div class="gh-head-brand">
+                <a class="gh-head-logo" href="../index.html">
+                        TechRead
+                </a>
+                <a class="gh-burger" role="button">
+                    <div class="gh-burger-box">
+                        <div class="gh-burger-inner"></div>
+                    </div>
+                </a>
+            </div>
+            <div class="gh-head-menu">
+                <ul class="nav">
+    <li class="nav-home"><a href="../index.html">Home</a></li>
+    <li class="nav-about"><a href="../about/index.html">About</a></li>
+    <li class="nav-contact-us"><a href="../contact-us-page/index.html">Contact us</a></li>
+</ul>
+
+            </div>
+            <div class="gh-head-actions">
+                <div class="gh-social">
+                        <a class="gh-social-facebook" href="https://www.facebook.com/ghost" title="Facebook" target="_blank" rel="noopener"><svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><path d="M16 0c8.837 0 16 7.163 16 16s-7.163 16-16 16S0 24.837 0 16 7.163 0 16 0zm5.204 4.911h-3.546c-2.103 0-4.443.885-4.443 3.934.01 1.062 0 2.08 0 3.225h-2.433v3.872h2.509v11.147h4.61v-11.22h3.042l.275-3.81h-3.397s.007-1.695 0-2.187c0-1.205 1.253-1.136 1.329-1.136h2.054V4.911z" /></svg></a>
+                        <a class="gh-social-twitter" href="https://twitter.com/ghost" title="Twitter" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M30.063 7.313c-.813 1.125-1.75 2.125-2.875 2.938v.75c0 1.563-.188 3.125-.688 4.625a15.088 15.088 0 0 1-2.063 4.438c-.875 1.438-2 2.688-3.25 3.813a15.015 15.015 0 0 1-4.625 2.563c-1.813.688-3.75 1-5.75 1-3.25 0-6.188-.875-8.875-2.625.438.063.875.125 1.375.125 2.688 0 5.063-.875 7.188-2.5-1.25 0-2.375-.375-3.375-1.125s-1.688-1.688-2.063-2.875c.438.063.813.125 1.125.125.5 0 1-.063 1.5-.25-1.313-.25-2.438-.938-3.313-1.938a5.673 5.673 0 0 1-1.313-3.688v-.063c.813.438 1.688.688 2.625.688a5.228 5.228 0 0 1-1.875-2c-.5-.875-.688-1.813-.688-2.75 0-1.063.25-2.063.75-2.938 1.438 1.75 3.188 3.188 5.25 4.25s4.313 1.688 6.688 1.813a5.579 5.579 0 0 1 1.5-5.438c1.125-1.125 2.5-1.688 4.125-1.688s3.063.625 4.188 1.813a11.48 11.48 0 0 0 3.688-1.375c-.438 1.375-1.313 2.438-2.563 3.188 1.125-.125 2.188-.438 3.313-.875z"/></svg>
+</a>
+                </div>
+
+                    <a class="gh-head-button" href="index.html#/portal/signup" data-portal="signup">Subscribe</a>
+            </div>
+        </nav>
+    </header>
+
+    <div class="site-content">
+        
+
+
+
+<main id="site-main" class="site-main">
+    <article class="article post image-small">
+
+        <header class="article-header gh-canvas">
+
+
+            <h1 class="article-title">Automate WhatsApp Messages with Python in 3 Steps</h1>
+
+
+            <div class="article-byline">
+                <section class="article-byline-content">
+                    <ul class="author-list">
+                        <li class="author-list-item">
+                            <a href="../author/satyam/index.html" class="author-avatar author-profile-image"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path d="M3.513 18.998C4.749 15.504 8.082 13 12 13s7.251 2.504 8.487 5.998C18.47 21.442 15.417 23 12 23s-6.47-1.558-8.487-4.002zM12 12c2.21 0 4-2.79 4-5s-1.79-4-4-4-4 1.79-4 4 1.79 5 4 5z" fill="#FFF"/></g></svg>
+</a>
+                        </li>
+                    </ul>
+                    <div class="article-byline-meta">
+                        <h4 class="author-name"><a href="../author/satyam/index.html">Satyam Anand</a></h4>
+                        <div class="byline-meta-content">
+                            <time class="byline-meta-date" datetime="2022-04-22">Apr 22, 2022</time>
+                            <span class="byline-reading-time"><span class="bull">&bull;</span> 2 min read</span>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <figure class="article-image">
+                <img
+                    srcset="../content/images/size/w300/2022/04/0_bsS0xbIcmVU7xSC4-1.jpeg 300w,
+                           ../content/images/size/w600/2022/04/0_bsS0xbIcmVU7xSC4-1.jpegg 600w,
+                          ../content/images/size/w1000/2022/04/0_bsS0xbIcmVU7xSC4-1.jpegeg 1000w,
+                         ../content/images/size/w2000/2022/04/0_bsS0xbIcmVU7xSC4-1.jpegpeg 2000w"
+                    sizes="(min-width: 1400px) 1400px, 92vw"
+                    src="../content/images/size/w2000/2022/04/0_bsS0xbIcmVU7xSC4-1.jpeg"
+                    alt="Automate WhatsApp Messages with Python in 3 Steps"
+                />
+            </figure>
+        </header>
+
+        <section class="gh-content gh-canvas">
+            <h3 id="send-whatsapp-messages-to-contacts-and-groups-using-python"><em>Send WhatsApp messages to contacts and groups using Python</em></h3><figure class="kg-card kg-image-card kg-width-full"><img src="../content/images/2022/04/0_bsS0xbIcmVU7xSC4.jpeg" class="kg-image" alt loading="lazy" width="700" height="700" srcset="../content/images/size/w600/2022/04/0_bsS0xbIcmVU7xSC4.jpeg 600w, ../content/images/2022/04/0_bsS0xbIcmVU7xSC4.jpeg 700w"></figure><p>One of the coolest things you can do in Python is automating everyday tasks. Probably the most common task we do every day is sending messages on WhatsApp.</p><p>Although this task is as simple as picking up the phone, typing, and tapping on the “send” button, we could sometimes forget to send a message on special occasions (birthdays, anniversaries, etc).</p><p>Can we schedule a WhatsApp message with Python?</p><p>Sure! We only need to install a library called pywhatkit. Then we can schedule messages to send to any of our contacts or even to a group.</p><p>Here are the 3 steps you need to follow to send WhatsApp messages to contacts and groups using Python.</p><p><em><em>Disclaimer: This guide is for educational purposes only. You might use this library to schedule birthday/anniversary messages while learning Python, but I don’t recommend you to use it in case you need to send a message that needs to remain private.</em></em></p><h1 id="sending-messages-to-whatsapp-with-pywhatkit">Sending messages to WhatsApp with pywhatkit</h1><p>Pywhatkit is a Python library used for different purposes and one of those is sending WhatsApp messages.</p><p>This is an easy-to-use library that doesn’t need any additional setup. That said, it has a lot of dependencies, so I highly recommend you install it in a new virtual environment (learn how to set up a virtual environment <a href="https://towardsdatascience.com/why-you-need-a-python-virtual-environment-and-how-to-set-it-up-35019841697d" rel="noopener">here</a>).</p><p><em><em>If you don’t feel like reading, you can watch my video instead!</em></em></p><figure class="kg-card kg-embed-card"><iframe src="https://cdn.embedly.com/widgets/media.html?src=https%3A%2F%2Fwww.youtube.com%2Fembed%2FMQQTABNMZCE%3Ffeature%3Doembed&amp;display_name=YouTube&amp;url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DMQQTABNMZCE&amp;image=https%3A%2F%2Fi.ytimg.com%2Fvi%2FMQQTABNMZCE%2Fhqdefault.jpg&amp;key=a19fcc184b9711e1b4764040d3dc5c07&amp;type=text%2Fhtml&amp;schema=youtube" allowfullscreen="" frameborder="0" height="480" width="854" title="Automate WhatsApp Messages with Python in 3 Steps" class="ij ah ai cx ae" scrolling="auto" style="box-sizing: inherit; width: 692px; top: 0px; left: 0px; height: 388.938px; position: absolute;"></iframe></figure><blockquote><em><em>Be sure to <a href="https://frankandrade.ck.page/44559e1ae7" rel="noopener ugc nofollow">subscribe here</a> to get my <strong><strong>Automation Cheat Sheet</strong></strong> (Free PDF)</em></em></blockquote><h2 id="step-1-install-pywhatkit">Step 1: Install pywhatkit</h2><p>To install the last version of pywhatkit, open up a terminal and run the following command.</p><p>pip install pywhatkit</p><p>The installation might take seconds or even a minute so be patient. Once the library is installed, you can check out all the dependencies this library installed with the command <code>pip list</code>.</p><h2 id="step-2-send-a-message-to-a-contact-on-whatsapp">Step 2: Send a message to a contact on WhatsApp</h2><p>Before we start sending messages, you have to log in to your WhatsApp account through WhatsApp Web. If you’re not logged in, your phone isn’t on the same WiFi as your computer, or the phone is far away from your computer, this method won’t work.</p><p>To send a message to a WhatsApp contact with Python and pywhatkit, we use the <code>.sendwhatmsg</code> method as shown in the code below (insert your contact number instead).</p><p><strong><strong>import</strong></strong> pywhatkit<em><em># syntax: phone number with country code, message, hour and minutes</em></em><br>pywhatkit.sendwhatmsg('+1xxxxxxxx', 'Message 1', 18, 52)</p><p>What this code means is “Type ‘Message 1’ and send it to contact X at 18:52”</p><p>After running the code above you’ll get a message like this:</p><blockquote><em><em>In 10 seconds, web.WhatsApp.com will open, and after 15 seconds, a message will be delivered by Whatsapp.</em></em></blockquote><p>That’s it! After some seconds your browser will open and the message will be sent to your contact.</p><p><strong><strong>Important Note</strong></strong>: When your browser opens, a message to grant access will pop up. You have to accept this message (if you don’t give permission the library won’t be able to control your browser).</p><p>You can also do this manually. On macOS, you have to go to “System Preferences”, click on “Security &amp; Privacy”, select “Accesabitly”, and check the “Terminal” box.</p>
+        </section>
+
+
+    </article>
+</main>
+
+
+    <section class="footer-cta ">
+        <div class="inner">
+            <h2>Sign up for more like this.</h2>
+            <a class="footer-cta-button" href="index.html#/portal" data-portal>
+                <div class="footer-cta-input">Enter your email</div>
+                <span>Subscribe</span>
+            </a>
+        </div>
+    </section>
+
+
+
+
+            <aside class="read-more-wrap">
+                <div class="read-more inner">
+                        
+<article class="post-card post ">
+
+    <a class="post-card-image-link" href="../10-python-automation-scripts-for-everyday-problems/index.html">
+        <img class="post-card-image"
+            srcset="../content/images/size/w300/2022/04/python.jpeg 300w,
+                   ../content/images/size/w600/2022/04/python.jpegg 600w,
+                  ../content/images/size/w1000/2022/04/python.jpegeg 1000w,
+                 ../content/images/size/w2000/2022/04/python.jpegpeg 2000w"
+            sizes="(max-width: 1000px) 400px, 800px"
+            src="../content/images/size/w600/2022/04/python.jpeg"
+            alt="10 Python Automation Scripts for Everyday Problems"
+            loading="lazy"
+        />
+    </a>
+
+    <div class="post-card-content">
+
+        <a class="post-card-content-link" href="../10-python-automation-scripts-for-everyday-problems/index.html">
+            <header class="post-card-header">
+                <h2 class="post-card-title">10 Python Automation Scripts for Everyday Problems</h2>
+            </header>
+            <div class="post-card-excerpt">
+                <p>Collection of Handy Tools for your Daily Python Projects Every day we need some automation tools to solve our daily tasks and even need automation help in our Projects. In this article, You will get to know 10 Python Automation Scripts that will solve your everyday problems. Make a bookmark</p>
+            </div>
+        </a>
+
+        <footer class="post-card-meta">
+            <ul class="author-list">
+                <li class="author-list-item">
+                    <a href="../author/satyam/index.html" class="static-avatar author-profile-image"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path d="M3.513 18.998C4.749 15.504 8.082 13 12 13s7.251 2.504 8.487 5.998C18.47 21.442 15.417 23 12 23s-6.47-1.558-8.487-4.002zM12 12c2.21 0 4-2.79 4-5s-1.79-4-4-4-4 1.79-4 4 1.79 5 4 5z" fill="#FFF"/></g></svg>
+</a>
+                </li>
+            </ul>
+            <div class="post-card-byline-content">
+                <span class="post-card-byline-author"><a href="../author/satyam/index.html">Satyam Anand</a></span>
+                <span class="post-card-byline-date"><time datetime="2022-04-22">Apr 22, 2022</time> <span class="bull">&bull;</span> 5 min read</span>
+            </div>
+        </footer>
+
+    </div>
+
+</article>
+                        
+<article class="post-card post ">
+
+    <a class="post-card-image-link" href="../great-tools-for-ui-design/index.html">
+        <img class="post-card-image"
+            srcset="../content/images/size/w300/2022/04/11-Best-Security-Plugins-for-WordPress-1.png 300w,
+                   ../content/images/size/w600/2022/04/11-Best-Security-Plugins-for-WordPress-1.pngg 600w,
+                  ../content/images/size/w1000/2022/04/11-Best-Security-Plugins-for-WordPress-1.pngng 1000w,
+                 ../content/images/size/w2000/2022/04/11-Best-Security-Plugins-for-WordPress-1.pngpng 2000w"
+            sizes="(max-width: 1000px) 400px, 800px"
+            src="../content/images/size/w600/2022/04/11-Best-Security-Plugins-for-WordPress-1.png"
+            alt="Great Tools for UI Design"
+            loading="lazy"
+        />
+    </a>
+
+    <div class="post-card-content">
+
+        <a class="post-card-content-link" href="../great-tools-for-ui-design/index.html">
+            <header class="post-card-header">
+                <h2 class="post-card-title">Great Tools for UI Design</h2>
+            </header>
+            <div class="post-card-excerpt">
+                <p>Some of the best tools for designing great ui designs and interactions. FigmaSketchInvision StudioMockplusMoqupsLunancyFramer X</p>
+            </div>
+        </a>
+
+        <footer class="post-card-meta">
+            <ul class="author-list">
+                <li class="author-list-item">
+                    <a href="../author/satyam/index.html" class="static-avatar author-profile-image"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path d="M3.513 18.998C4.749 15.504 8.082 13 12 13s7.251 2.504 8.487 5.998C18.47 21.442 15.417 23 12 23s-6.47-1.558-8.487-4.002zM12 12c2.21 0 4-2.79 4-5s-1.79-4-4-4-4 1.79-4 4 1.79 5 4 5z" fill="#FFF"/></g></svg>
+</a>
+                </li>
+            </ul>
+            <div class="post-card-byline-content">
+                <span class="post-card-byline-author"><a href="../author/satyam/index.html">Satyam Anand</a></span>
+                <span class="post-card-byline-date"><time datetime="2022-04-21">Apr 21, 2022</time> <span class="bull">&bull;</span> 1 min read</span>
+            </div>
+        </footer>
+
+    </div>
+
+</article>
+                        
+<article class="post-card post ">
+
+    <a class="post-card-image-link" href="../coming-soon/index.html">
+        <img class="post-card-image"
+            srcset="https://static.ghost.org/v4.0.0/images/feature-image.jpg 300w,
+                    https://static.ghost.org/v4.0.0/images/feature-image.jpg 600w,
+                    https://static.ghost.org/v4.0.0/images/feature-image.jpg 1000w,
+                    https://static.ghost.org/v4.0.0/images/feature-image.jpg 2000w"
+            sizes="(max-width: 1000px) 400px, 800px"
+            src="https://static.ghost.org/v4.0.0/images/feature-image.jpg"
+            alt="Coming soon"
+            loading="lazy"
+        />
+    </a>
+
+    <div class="post-card-content">
+
+        <a class="post-card-content-link" href="../coming-soon/index.html">
+            <header class="post-card-header">
+                <h2 class="post-card-title">Coming soon</h2>
+            </header>
+            <div class="post-card-excerpt">
+                <p>This is TechRead, a brand new site by Satyam Anand that's just getting started. Things will be up and running here shortly, but you can subscribe in the meantime if you'd like to stay up to date and receive emails when new content is published!</p>
+            </div>
+        </a>
+
+        <footer class="post-card-meta">
+            <ul class="author-list">
+                <li class="author-list-item">
+                    <a href="../author/satyam/index.html" class="static-avatar author-profile-image"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path d="M3.513 18.998C4.749 15.504 8.082 13 12 13s7.251 2.504 8.487 5.998C18.47 21.442 15.417 23 12 23s-6.47-1.558-8.487-4.002zM12 12c2.21 0 4-2.79 4-5s-1.79-4-4-4-4 1.79-4 4 1.79 5 4 5z" fill="#FFF"/></g></svg>
+</a>
+                </li>
+            </ul>
+            <div class="post-card-byline-content">
+                <span class="post-card-byline-author"><a href="../author/satyam/index.html">Satyam Anand</a></span>
+                <span class="post-card-byline-date"><time datetime="2022-04-21">Apr 21, 2022</time> <span class="bull">&bull;</span> 1 min read</span>
+            </div>
+        </footer>
+
+    </div>
+
+</article>
+                </div>
+            </aside>
+
+
+
+    </div>
+
+    <footer class="site-footer outer">
+        <div class="inner">
+            <section class="copyright"><a href="../index.html">TechRead</a> &copy; 2022</section>
+            <nav class="site-footer-nav">
+                <ul class="nav">
+    <li class="nav-sign-up"><a href="index.html#/portal/">Sign up</a></li>
+</ul>
+
+            </nav>
+            <div><a href="https://incodesatx.com/" target="_blank" rel="noopener">Developed by INCODESATX</a></div>
+        </div> Exclusive content about tech and programming.
+    </footer>
+
+</div>
+
+
+<script
+    src="https://code.jquery.com/jquery-3.5.1.min.js"
+    integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
+    crossorigin="anonymous">
+</script>
+<script src="../assets/built/casper.js%3Fv=d04b565063"></script>
+<script>
+$(document).ready(function () {
+    // Mobile Menu Trigger
+    $('.gh-burger').click(function () {
+        $('body').toggleClass('gh-head-open');
+    });
+    // FitVids - Makes video embeds responsive
+    $(".gh-content").fitVids();
+});
+</script>
+
+
+
+</body>
+</html>
