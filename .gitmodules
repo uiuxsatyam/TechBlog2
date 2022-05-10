@@ -1,7 +1,3 @@
 [submodule "TechBlog2"]
-	path = TechBlog2
-	url = https://github.com/IncodeSatx/TechBlog2
-
-[submodule "static"]
 	path = TechBlog2/static
-	url = https://github.com/IncodeSatx/TechBlog2/static
+	url = https://github.com/IncodeSatx/TechBlog2.git
